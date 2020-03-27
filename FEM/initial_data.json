@@ -1,0 +1,14 @@
+{
+    "init temp": 100,
+    "sim time": 500,
+    "sim step time": 50,
+    "amb temp": 1200,
+    "alpha temp": 300,
+    "H": 0.100,
+    "W": 0.100,
+    "n_H": 4,
+    "n_W": 4,
+    "spec heat": 700,
+    "conductivity": 25,
+    "density": 7800
+}

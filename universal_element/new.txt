@@ -1,0 +1,82 @@
+from array import *
+from cmath import sqrt
+from pprint import pprint
+
+import numpy as np
+
+
+def calculate_dNT_eta_row(eta):
+    dN1 = round((-0.25 *(1-eta)).real, 5)
+    dN2 = round((0.25 * (1-eta)).real, 5)
+    dN3 = round((0.25 * (1+eta)).real, 5)
+    dN4 = round((-0.25 * (1+eta)).real, 5)
+
+
+    return [dN1, dN2, dN3, dN4]
+
+def calculate_dNT_ksi_row(eta):
+    dN1 = round((-0.25 *(1-eta)).real, 5)
+    dN2 = round((-0.25 * (1+eta)).real, 5)
+    dN3 = round((0.25 * (1+eta)).real, 5)
+    dN4 = round((0.25 * (1-eta)).real, 5)
+
+    return [dN1, dN2, dN3, dN4]
+
+def calculate_N(eta, ksi):
+    N1 =  round((0.25 * (1-eta)*(1-ksi)).real, 5)
+    N2 =  round((0.25 * (1+eta)*(1-ksi)).real, 5)
+    N3 =  round((0.25 * (1+eta)*(1+ksi)).real, 5)
+    N4 =  round((0.25 * (1-eta)*(1+ksi)).real, 5)
+    return [N1, N2, N3, N4]
+
+def calculate_dXY(tab, dNT):
+    tmp = list()
+    for j in range(0,len(dNT)):
+        d = 0
+        for i in range(0,len(tab)):
+            d += dNT[j][i] * tab[i]
+        tmp.append(d)
+    return tmp
+
+def calculate_det(tab1, tab2):
+    tmp = list()
+    for i in range(0, len(tab2)):
+        print(tab1[i])
+        print(tab2[i])
+        tmp.append(round((tab1[i][0] * tab2[i][1] - tab1[i][1] * tab2[i][1]).real, 8))
+    return tmp
+
+
+def matmult(a,b, c, det):
+    return np.dot(np.dot(1/det, [a,b]), c)
+
+if __name__ == "__main__":
+
+    ksi1 = -(1/sqrt(3))
+    eta1 = -(1/sqrt(3))
+
+    ksi2 = (1/sqrt(3))
+    eta2 = -(1/sqrt(3))
+
+    ksi3 = (1/sqrt(3))
+    eta3 = (1/sqrt(3))
+
+    ksi4 = -(1/sqrt(3))
+    eta4 = (1/sqrt(3))
+
+    xT = [0, 0.025, 0.025, 0]
+    yT = [0, 0, 0.025, 0.025]
+
+    dNT_eta = [calculate_dNT_eta_row(eta1), calculate_dNT_eta_row(eta2), calculate_dNT_eta_row(eta3), calculate_dNT_eta_row(eta4)]
+    dNT_ksi = [calculate_dNT_ksi_row(ksi1), calculate_dNT_ksi_row(ksi2), calculate_dNT_ksi_row(ksi3),calculate_dNT_ksi_row(ksi4)]
+
+    # det = calculate_det([calculate_dXY(xT, dNT_eta[0]), calculate_dXY(yT, dNT_eta[0])],
+    #                     [calculate_dXY(xT, dNT_ksi[0]), calculate_dXY(yT, dNT_ksi[0])])
+    #
+    # a = matmult([calculate_dXY(yT, dNT_ksi[0]), -1*calculate_dXY(yT, dNT_eta[0])],
+    #          [-1*calculate_dXY(xT, dNT_ksi[0]), calculate_dXY(xT, dNT_eta[0])], [dNT_eta[0], dNT_ksi[0]], det)
+    #print(a)
+    det = calculate_det([calculate_dXY(xT, dNT_eta), calculate_dXY(yT, dNT_eta)],
+                         [calculate_dXY(xT, dNT_ksi), calculate_dXY(yT, dNT_ksi)])
+    #print(det)
+

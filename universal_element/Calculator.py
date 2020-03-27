@@ -26,6 +26,7 @@ class Calculator:
         self.matmult()
 
 
+
     def calculate_dNT_dEta(self):
         for ksi in self.ksi_array:
             dN1 = round((-0.25 * (1 - ksi)).real, 6)

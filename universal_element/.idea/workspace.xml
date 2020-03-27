@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9303bf0b-2343-4686-999f-8f534bf4a7c7" name="Default Changelist" comment="" />
+    <list default="true" id="9303bf0b-2343-4686-999f-8f534bf4a7c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../universal_element/Calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../universal_element/Calculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../universal_element/NEW 2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../universal_element/UElem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../universal_element/UniversalElement/Calculator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../universal_element/UniversalElement/UniversalElement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../universal_element/new.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../universal_element/old.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +22,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1Zf2rEHuwDAwTijpHu57fGj8DCq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,7 +34,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../universal_element" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.UniversalElement (1)">
@@ -59,7 +72,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UniversalElement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../universal_element/UniversalElement.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,6 +144,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="universal_element" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="universal_element" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../universal_element" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <module name="universal_element" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,9 +208,17 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.old" />
+      <item itemvalue="Python.UElem" />
+      <item itemvalue="Python.UniversalElement" />
+      <item itemvalue="Python.universal_element" />
+      <item itemvalue="Python.UniversalElement (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.UniversalElement (1)" />
+        <item itemvalue="Python.universal_element" />
         <item itemvalue="Python.UniversalElement" />
         <item itemvalue="Python.UElem" />
         <item itemvalue="Python.old" />
@@ -205,35 +247,36 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="507" y="27" key="#UElem/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1585218823876" />
-    <state x="75" y="26" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585227354916">
+    <state x="75" y="26" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585330344662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="75" y="26" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1585218807964" />
-    <state x="75" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585227354916" />
-    <state x="400" y="134" key="FileChooserDialogImpl" timestamp="1585218806775">
+    <state x="75" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585330344662" />
+    <state x="400" y="134" key="FileChooserDialogImpl" timestamp="1585330342428">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="400" y="134" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1585218806775" />
-    <state width="1515" height="259" key="GridCell.Tab.0.bottom" timestamp="1585329805206">
+    <state x="400" y="134" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585330342428" />
+    <state width="1515" height="259" key="GridCell.Tab.0.bottom" timestamp="1585330409305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="259" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1585224704915" />
-    <state width="1515" height="259" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585329805206" />
-    <state width="1515" height="259" key="GridCell.Tab.0.center" timestamp="1585329805206">
+    <state width="1515" height="259" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585330409305" />
+    <state width="1515" height="259" key="GridCell.Tab.0.center" timestamp="1585330409305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="259" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1585224704915" />
-    <state width="1515" height="259" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585329805206" />
-    <state width="1515" height="259" key="GridCell.Tab.0.left" timestamp="1585329805206">
+    <state width="1515" height="259" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585330409305" />
+    <state width="1515" height="259" key="GridCell.Tab.0.left" timestamp="1585330409305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="259" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1585224704915" />
-    <state width="1515" height="259" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585329805206" />
-    <state width="1515" height="259" key="GridCell.Tab.0.right" timestamp="1585329805206">
+    <state width="1515" height="259" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585330409305" />
+    <state width="1515" height="259" key="GridCell.Tab.0.right" timestamp="1585330409305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="259" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1585224704915" />
-    <state width="1515" height="259" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585329805206" />
+    <state width="1515" height="259" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585330409305" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1585330144678">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

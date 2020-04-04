@@ -1,6 +1,6 @@
 from cmath import sqrt
 
-from Calculator import Calculator
+from UniversalElementCalculator import UniversalElementCalculator
 
 
 class UniversalElement:
@@ -11,6 +11,8 @@ class UniversalElement:
         self.xT = [0, 0.025, 0.025, 0]
         self.yT = [0, 0, 0.025, 0.025]
 
-        Calculator(self.eta, self.ksi, self.xT, self.yT)
+        universal_element_calculator = UniversalElementCalculator(self.eta, self.ksi, self.xT, self.yT)
+        print(universal_element_calculator.calculate_universal_element())
 
-UniversalElement()
+if __name__ == "__main__":
+    UniversalElement()

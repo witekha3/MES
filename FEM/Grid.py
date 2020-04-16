@@ -1,8 +1,0 @@
-
-
-
-class Grid:
-
-    nodes = []
-    elements = []
-

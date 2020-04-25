@@ -7,6 +7,8 @@ class Element:
 
     def __init__(self):
         self.id_array = []
+        self.H_matrix = []
+        self.C_matrix = []
 
     def print_id_array(self):
         pprint(self.id_array[1].print_xy(), self.id_array[2].print_xy())

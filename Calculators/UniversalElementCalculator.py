@@ -1,9 +1,11 @@
+import itertools
 from pprint import pprint
 from typing import Any, Union
 
 import numpy as np
 from numpy.core._multiarray_umath import ndarray
 
+from GlobalData import GlobalData
 from Tools.FileManager import FileManager
 
 
@@ -113,11 +115,13 @@ class UniversalElementCalculator:
             self.integral_points_y.append(np.round(np.dot(self.dN_dy[i].reshape(4,1), [self.dN_dy[i]]),2))
 
     def calculate_H(self):
-        self.H.append(np.round(np.multiply(np.multiply(30, self.det), np.add(self.integral_points_x, self.integral_points_y)),2))
+        self.H.append(np.round(np.multiply(np.multiply(GlobalData().conductivity, self.det),
+                                           np.add(self.integral_points_x, self.integral_points_y)),2))
 
 
     def calculate_H_matrics_sum(self):
         self.H_matrics_sum = np.sum(self.H, axis=1)
+        self.H_matrics_sum = list(itertools.chain.from_iterable(self.H_matrics_sum))
 
     def calculate_C(self):
         cp_x_ro = self.cp * self.ro

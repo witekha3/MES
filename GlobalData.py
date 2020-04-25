@@ -12,4 +12,5 @@ class GlobalData:
         self.n_W = config["n_H"]
         self.n_N = self.n_H * self.n_W
         self.n_E = (self.n_H - 1) * (self.n_W - 2)
+        self.conductivity = config["conductivity"]
 

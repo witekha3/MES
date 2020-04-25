@@ -1,7 +1,5 @@
 from pprint import pprint
 
-import numpy as np
-
 
 class Element:
 

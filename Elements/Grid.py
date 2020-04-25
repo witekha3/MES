@@ -20,8 +20,6 @@ class Grid:
                     Grid.global_matrix_H[element.id_array[i]][element.id_array[j]] += element.H_matrix[i][j]
                     Grid.global_matrix_C[element.id_array[i]][element.id_array[j]] += element.C_matrix[i][j]
 
-
-
     @staticmethod
     def print_nodes():
         for node in Grid.nodes:

@@ -1,16 +1,11 @@
 import itertools
-from pprint import pprint
-from typing import Any, Union
-
 import numpy as np
-from numpy.core._multiarray_umath import ndarray
 
 from GlobalData import GlobalData
 from Tools.FileManager import FileManager
 
 
 class UniversalElementCalculator:
-
 
     def __init__(self, eta_array, ksi_array, x, y):
         file_manager = FileManager()

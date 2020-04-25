@@ -17,7 +17,6 @@ class Creator:
         self.lx = self.W / (self.n_W - 1)
         self.ly = self.H / (self.n_H - 1)
 
-
     def create_nodes_for_grid(self):
         node_id = 0
         for i in range(0, self.n_H):
@@ -28,7 +27,6 @@ class Creator:
                 node.id = node_id
                 Grid.nodes.append(copy(node))
                 node_id += 1
-
 
     def create_elements_for_grid(self):
         height_counter = 0

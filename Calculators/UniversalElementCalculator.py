@@ -31,6 +31,10 @@ class UniversalElementCalculator:
         self.C = []
         self.H_matrics_sum = []
         self.C_matrics_sum = []
+        self.make_main_calculations()
+
+
+    def make_main_calculations(self):
         self.calculate_N()
         self.calculate_dNT_dEta()
         self.calculate_dNT_dKsi()
@@ -38,10 +42,17 @@ class UniversalElementCalculator:
         self.calculate_det()
         self.calculate_dN_dX()
         self.calculate_integral_points()
+
+    def get_H_sum_matrix(self):
         self.calculate_H()
         self.calculate_H_matrics_sum()
+        return self.H_matrics_sum
+
+    def get_C_sum_matrix(self):
         self.calculate_C()
         self.calculate_C_matrics_sum()
+        return self.C_matrics_sum
+
 
     def calculate_N(self):
         N1_array = []

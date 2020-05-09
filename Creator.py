@@ -41,20 +41,27 @@ class Creator:
             try:
                 element = Element()
                 height_counter += 1
-                if height_counter == (self.n_H -1):
+                if height_counter > (self.n_H - 1):
                     height_counter = 0
                     continue
-                element.nodes_array.append(Grid.nodes[i])
-                element.nodes_array.append(Grid.nodes[i+4])
-                element.nodes_array.append(Grid.nodes[i+5])
-                element.nodes_array.append(Grid.nodes[i+1])
-                element.create_ids_array()
-                x_array = [Grid.nodes[i].x, Grid.nodes[i+4].x, Grid.nodes[i+5].x, Grid.nodes[i+1].x]
-                y_array = [Grid.nodes[i].y, Grid.nodes[i+4].y, Grid.nodes[i+5].y, Grid.nodes[i+1].y]
-                universal_element = UniversalElement(x_array, y_array)
-                element.H_matrix = universal_element.H_matrices
-                element.C_matrix = universal_element.C_matrices
-                # jesli warunek brzegowy to licz
+                self.add_nodes_to_element(element, i)
+                self.create_H_C_matrix_for_element(element, i)
                 Grid.elements.append(element)
             except IndexError:
                 continue
+
+    def add_nodes_to_element(self, element, node_id):
+        element.nodes_array.append(Grid.nodes[node_id])
+        element.nodes_array.append(Grid.nodes[node_id + self.n_H])
+        element.nodes_array.append(Grid.nodes[node_id + self.n_H + 1])
+        element.nodes_array.append(Grid.nodes[node_id + 1])
+        element.create_ids_array()
+
+    def create_H_C_matrix_for_element(self, element, node_id):
+        x_array = [Grid.nodes[node_id].x, Grid.nodes[node_id + self.n_H].x,
+                   Grid.nodes[node_id + self.n_H + 1].x, Grid.nodes[node_id + 1].x]
+        y_array = [Grid.nodes[node_id].y, Grid.nodes[node_id + self.n_H].y,
+                   Grid.nodes[node_id + self.n_H + 1].y, Grid.nodes[node_id + 1].y]
+        universal_element = UniversalElement(x_array, y_array, element.get_bc_array())
+        element.H_matrix = universal_element.H_matrix
+        element.C_matrix = universal_element.C_matrix

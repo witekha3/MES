@@ -48,5 +48,5 @@ class VectorPCalculator:
                 pc2.append(self.N[j][i][1])
             H1.append(np.multiply(self.conductivity * self.weight[0], np.multiply(np.array(pc1).reshape(4, 1), pc1)))
             H2.append(np.multiply(self.conductivity * self.weight[1], np.multiply(np.array(pc2).reshape(4, 1), pc2)))
-            self.H_bc = np.multiply(np.add(H1, H2), self.jakobies[j])
-        pprint(self.H_bc)
+        self.H_bc = np.round(np.multiply(np.add(H1, H2), self.jakobies[0]).real, 6)
+        return self.H_bc

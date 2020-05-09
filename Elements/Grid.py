@@ -17,10 +17,10 @@ class Grid:
     @staticmethod
     def fill_global_matrix():
         for element in Grid.elements:
-            for i in range(0, 4):
-                for j in range(0, 4):
-                    Grid.global_matrix_H[element.id_array[i]][element.id_array[j]] += element.H_matrix[i][j]
-                    Grid.global_matrix_C[element.id_array[i]][element.id_array[j]] += element.C_matrix[i][j]
+            for i in range(0, GlobalData().n_W):
+                for j in range(0, GlobalData().n_H):
+                    Grid.global_matrix_H[element.id_array[i]][element.id_array[j]] += np.round(element.H_matrix[i][j], 6)
+                    Grid.global_matrix_C[element.id_array[i]][element.id_array[j]] += np.round(element.C_matrix[i][j], 6)
 
     @staticmethod
     def print_nodes():

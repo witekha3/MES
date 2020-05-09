@@ -132,7 +132,7 @@ class UniversalElementCalculator:
     def calculate_C(self):
         cp_x_ro = self.cp * self.ro
         for N in self.N:
-            Nt = np.array(N).reshape(4,1)
+            Nt = np.array(N).reshape(4, 1)
             N = np.array(N)
             Nt_x_N = np.multiply(Nt, N)
             self.C.append(np.multiply(np.dot(cp_x_ro, Nt_x_N), self.det))

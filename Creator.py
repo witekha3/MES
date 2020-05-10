@@ -10,10 +10,11 @@ from GlobalData import GlobalData
 class Creator:
 
     def __init__(self):
-        self.H = GlobalData().H
-        self.W = GlobalData().W
-        self.n_H = GlobalData().n_H
-        self.n_W = GlobalData().n_W
+        global_data = GlobalData()
+        self.H = global_data.H
+        self.W = global_data.W
+        self.n_H = global_data.n_H
+        self.n_W = global_data.n_W
         self.lx = self.W / (self.n_W - 1)
         self.ly = self.H / (self.n_H - 1)
 

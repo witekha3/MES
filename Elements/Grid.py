@@ -8,8 +8,9 @@ from GlobalData import GlobalData
 class Grid:
     nodes = []
     elements = []
-    global_matrix_C = np.zeros((GlobalData().n_N, GlobalData().n_N))
-    global_matrix_H = np.zeros((GlobalData().n_N, GlobalData().n_N))
+    global_data = GlobalData()
+    global_matrix_C = np.zeros((global_data.n_N, global_data.n_N))
+    global_matrix_H = np.zeros((global_data.n_N, global_data.n_N))
 
     def __init__(self):
         Grid.fill_global_matrix()

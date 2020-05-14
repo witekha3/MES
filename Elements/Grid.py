@@ -11,6 +11,7 @@ class Grid:
     global_data = GlobalData()
     global_matrix_C = np.zeros((global_data.n_N, global_data.n_N))
     global_matrix_H = np.zeros((global_data.n_N, global_data.n_N))
+    global_vector_P = np.zeros((global_data.n_N, 1))
 
     def __init__(self):
         Grid.fill_global_matrix()
@@ -18,6 +19,7 @@ class Grid:
     @staticmethod
     def fill_global_matrix():
         for element in Grid.elements:
+            Grid.global_vector_P[element.id_array] += np.round(element.P_vector, 6)
             for i in range(0, GlobalData().n_W):
                 for j in range(0, GlobalData().n_H):
                     Grid.global_matrix_H[element.id_array[i]][element.id_array[j]] += np.round(element.H_matrix[i][j], 6)

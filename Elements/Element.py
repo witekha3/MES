@@ -6,6 +6,7 @@ class Element:
     def __init__(self):
         self.H_matrix = []
         self.C_matrix = []
+        self.P_vector = []
         self.nodes_array = []
         self.id_array = []
 

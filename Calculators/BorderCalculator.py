@@ -7,7 +7,7 @@ from Calculators.UniversalElementCalculator import UniversalElementCalculator
 from GlobalData import GlobalData
 
 
-class VectorPCalculator:
+class H_bc_Calculator:
     def __init__(self, N_array, weight=None):
         if weight is None:
             weight = [1, 1]

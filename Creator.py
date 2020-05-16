@@ -66,3 +66,4 @@ class Creator:
         universal_element = UniversalElement(x_array, y_array, element.get_bc_array())
         element.H_matrix = universal_element.H_matrix
         element.C_matrix = universal_element.C_matrix
+        element.P_vector = universal_element.P_vector

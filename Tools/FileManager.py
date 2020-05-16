@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import numpy as np
+
 
 class FileManager:
 
@@ -11,5 +13,10 @@ class FileManager:
     def load_config_file(self):
         with open(str(self.root_dir) + r"\Files\config.json") as f:
             data = json.load(f)
+        return data
+
+    def load_result_to_compare(self):
+        with open(str(self.root_dir) + r"\Files\result_to_compare.txt") as f:
+            data = np.loadtxt(f, delimiter=" ")
         return data
 

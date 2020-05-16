@@ -13,4 +13,10 @@ class GlobalData:
         self.n_N = self.n_H * self.n_W
         self.n_E = (self.n_H - 1) * (self.n_W - 2)
         self.conductivity = config["conductivity"]
+        self.amb_temp = config["amb temp"]
+        self.init_temp = config["init temp"]
+        self.simulation_time = config["sim time"]
+        self.simulation_step = config["sim step time"]
+        self.alpha = config["alpha"]
+
 

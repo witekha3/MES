@@ -3,7 +3,7 @@
     "sim time": 500,
     "sim step time": 50,
     "amb temp": 1200,
-    "alpha temp": 300,
+    "alpha": 300,
     "H": 0.100,
     "W": 0.100,
     "n_H": 4,

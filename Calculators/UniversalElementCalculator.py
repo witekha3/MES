@@ -61,10 +61,10 @@ class UniversalElementCalculator:
         N4_array = []
 
         for ksi, eta in zip(self.ksi_array, self.eta_array):
-            N1_array.append(round((0.25 * ((1 - ksi) * (1 - eta))).real, 5))
-            N2_array.append(round((0.25 * ((1 + ksi) * (1 - eta))).real, 5))
-            N3_array.append(round((0.25 * ((1 + ksi) * (1 + eta))).real, 5))
-            N4_array.append(round((0.25 * ((1 - ksi) * (1 + eta))).real, 5))
+            N1_array.append((0.25 * ((1 - ksi) * (1 - eta))).real)
+            N2_array.append((0.25 * ((1 + ksi) * (1 - eta))).real)
+            N3_array.append((0.25 * ((1 + ksi) * (1 + eta))).real)
+            N4_array.append((0.25 * ((1 - ksi) * (1 + eta))).real)
 
         self.N.append(N1_array)
         self.N.append(N2_array)
@@ -73,18 +73,18 @@ class UniversalElementCalculator:
 
     def calculate_dNT_dEta(self):
         for ksi in self.ksi_array:
-            dN1 = round((-0.25 * (1 - ksi)).real, 6)
-            dN2 = round((-0.25 * (1 + ksi)).real, 6)
-            dN3 = round((0.25 * (1 + ksi)).real, 6)
-            dN4 = round((0.25 * (1 - ksi)).real, 6)
+            dN1 = (-0.25 * (1 - ksi)).real
+            dN2 = (-0.25 * (1 + ksi)).real
+            dN3 = (0.25 * (1 + ksi)).real
+            dN4 = (0.25 * (1 - ksi)).real
             self.dN_dEta.append([dN1, dN2, dN3, dN4])
 
     def calculate_dNT_dKsi(self):
         for eta in self.eta_array:
-            dN1 = round((-0.25 * (1 - eta)).real, 6)
-            dN2 = round((0.25 * (1 - eta)).real, 6)
-            dN3 = round((0.25 * (1 + eta)).real, 6)
-            dN4 = round((-0.25 * (1 + eta)).real, 6)
+            dN1 = (-0.25 * (1 - eta)).real
+            dN2 = (0.25 * (1 - eta)).real
+            dN3 = (0.25 * (1 + eta)).real
+            dN4 = (-0.25 * (1 + eta)).real
             self.dN_dKsi.append([dN1, dN2, dN3, dN4])
 
     def calculate_dXY_dEK(self):
@@ -106,7 +106,7 @@ class UniversalElementCalculator:
 
     def calculate_det(self):
         for dx_dKsi, dy_dKsi, dx_dEta, dy_dEta in zip(self.dx_dKsi, self.dy_dKsi, self.dx_dEta, self.dy_dEta):
-            self.det.append([round((dx_dKsi[0] * dy_dEta[0] - dy_dKsi[0] * dx_dEta[0]).real, 8)])
+            self.det.append([(dx_dKsi[0] * dy_dEta[0] - dy_dKsi[0] * dx_dEta[0]).real])
 
     def calculate_dN_dX(self):
         for dx_dKsi, dy_dKsi, dx_dEta, dy_dEta, det, i in \
@@ -117,12 +117,12 @@ class UniversalElementCalculator:
 
     def calculate_integral_points(self):
         for i in range(0, len(self.dN_dx)):
-            self.integral_points_x.append(np.round(np.dot(self.dN_dx[i].reshape(4,1), [self.dN_dx[i]]),2))
-            self.integral_points_y.append(np.round(np.dot(self.dN_dy[i].reshape(4,1), [self.dN_dy[i]]),2))
+            self.integral_points_x.append(np.dot(self.dN_dx[i].reshape(4,1), [self.dN_dx[i]]))
+            self.integral_points_y.append(np.dot(self.dN_dy[i].reshape(4,1), [self.dN_dy[i]]))
 
     def calculate_H(self):
-        self.H.append(np.round(np.multiply(np.multiply(GlobalData().conductivity, self.det),
-                                           np.add(self.integral_points_x, self.integral_points_y)),2))
+        self.H.append(np.multiply(np.multiply(GlobalData().conductivity, self.det),
+                                           np.add(self.integral_points_x, self.integral_points_y)))
 
 
     def calculate_H_matrics_sum(self):
@@ -138,7 +138,7 @@ class UniversalElementCalculator:
             self.C.append(np.multiply(np.dot(cp_x_ro, Nt_x_N), self.det))
 
     def calculate_C_matrics_sum(self):
-        self.C_matrics_sum = np.round(np.sum(self.C, axis=0), 4)
+        self.C_matrics_sum = np.sum(self.C, axis=0)
 
 
 

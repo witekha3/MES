@@ -1,6 +1,7 @@
 from pprint import pprint
-
+import scipy.linalg as la
 import numpy as np
+import scipy
 
 from Creator import Creator
 from Elements.Grid import Grid
@@ -30,7 +31,7 @@ class MESSymulator:
         for i in range(self.simulation_step, self.simulation_time + self.simulation_step, self.simulation_step):
             p = np.dot((self.C_matrix / self.simulation_step), t0) + self.P_vector
             h = self.H_matrix + (self.C_matrix / self.simulation_step)
-            t0 = np.dot(np.linalg.inv(h), p)
+            t0 = np.linalg.solve(h, p)
             step_temp_dict[i] = {}
             step_temp_dict[i]["min"] = np.min(t0)
             step_temp_dict[i]["max"] = np.max(t0)

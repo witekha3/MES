@@ -33,7 +33,6 @@ class UniversalElementCalculator:
         self.C_matrics_sum = []
         self.make_main_calculations()
 
-
     def make_main_calculations(self):
         self.calculate_N()
         self.calculate_dNT_dEta()
@@ -52,7 +51,6 @@ class UniversalElementCalculator:
         self.calculate_C()
         self.calculate_C_matrics_sum()
         return self.C_matrics_sum
-
 
     def calculate_N(self):
         N1_array = []
@@ -103,7 +101,6 @@ class UniversalElementCalculator:
             self.dy_dEta.append([dy_eta])
             self.dy_dKsi.append([dy_ksi])
 
-
     def calculate_det(self):
         for dx_dKsi, dy_dKsi, dx_dEta, dy_dEta in zip(self.dx_dKsi, self.dy_dKsi, self.dx_dEta, self.dy_dEta):
             self.det.append([(dx_dKsi[0] * dy_dEta[0] - dy_dKsi[0] * dx_dEta[0]).real])
@@ -111,19 +108,19 @@ class UniversalElementCalculator:
     def calculate_dN_dX(self):
         for dx_dKsi, dy_dKsi, dx_dEta, dy_dEta, det, i in \
                 zip(self.dx_dKsi, self.dy_dKsi, self.dx_dEta, self.dy_dEta, self.det, range(0, len(self.dN_dEta))):
-            dN_dx, dN_dy = np.dot(np.dot(1 / det[0], [[dy_dEta[0], -dy_dKsi[0]], [-dx_dEta[0], dx_dKsi[0]]]), [self.dN_dKsi[i], self.dN_dEta[i]])
+            dN_dx, dN_dy = np.dot(np.dot(1 / det[0], [[dy_dEta[0], -dy_dKsi[0]], [-dx_dEta[0], dx_dKsi[0]]]),
+                                  [self.dN_dKsi[i], self.dN_dEta[i]])
             self.dN_dx.append(dN_dx)
             self.dN_dy.append(dN_dy)
 
     def calculate_integral_points(self):
         for i in range(0, len(self.dN_dx)):
-            self.integral_points_x.append(np.dot(self.dN_dx[i].reshape(4,1), [self.dN_dx[i]]))
-            self.integral_points_y.append(np.dot(self.dN_dy[i].reshape(4,1), [self.dN_dy[i]]))
+            self.integral_points_x.append(np.dot(self.dN_dx[i].reshape(4, 1), [self.dN_dx[i]]))
+            self.integral_points_y.append(np.dot(self.dN_dy[i].reshape(4, 1), [self.dN_dy[i]]))
 
     def calculate_H(self):
         self.H.append(np.multiply(np.multiply(GlobalData().conductivity, self.det),
-                                           np.add(self.integral_points_x, self.integral_points_y)))
-
+                                  np.add(self.integral_points_x, self.integral_points_y)))
 
     def calculate_H_matrics_sum(self):
         self.H_matrics_sum = np.sum(self.H, axis=1)
@@ -132,14 +129,9 @@ class UniversalElementCalculator:
     def calculate_C(self):
         cp_x_ro = self.cp * self.ro
         for N in self.N:
-            Nt = np.array(N).reshape(4, 1)
             N = np.array(N)
-            Nt_x_N = np.multiply(Nt, N)
+            Nt_x_N = np.multiply(np.array(N).reshape(4, 1), N)
             self.C.append(np.multiply(np.dot(cp_x_ro, Nt_x_N), self.det))
 
     def calculate_C_matrics_sum(self):
         self.C_matrics_sum = np.sum(self.C, axis=0)
-
-
-
-

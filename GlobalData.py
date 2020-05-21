@@ -18,5 +18,7 @@ class GlobalData:
         self.simulation_time = config["sim time"]
         self.simulation_step = config["sim step time"]
         self.alpha = config["alpha"]
+        self.density = config["density"]
+        self.cp = config["spec heat"]
 
 

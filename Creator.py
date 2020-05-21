@@ -46,7 +46,7 @@ class Creator:
                     height_counter = 0
                     continue
                 self.add_nodes_to_element(element, i)
-                self.create_H_C_matrix_for_element(element, i)
+                self.create_H_C_P_for_element(element, i)
                 Grid.elements.append(element)
             except IndexError:
                 continue
@@ -58,7 +58,7 @@ class Creator:
         element.nodes_array.append(Grid.nodes[node_id + 1])
         element.create_ids_array()
 
-    def create_H_C_matrix_for_element(self, element, node_id):
+    def create_H_C_P_for_element(self, element, node_id):
         x_array = [Grid.nodes[node_id].x, Grid.nodes[node_id + self.n_H].x,
                    Grid.nodes[node_id + self.n_H + 1].x, Grid.nodes[node_id + 1].x]
         y_array = [Grid.nodes[node_id].y, Grid.nodes[node_id + self.n_H].y,

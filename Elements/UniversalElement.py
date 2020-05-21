@@ -29,6 +29,7 @@ class UniversalElement:
             self.P_vector = np.add(self.P_vector, border_calculator.calculate_P_vector()[id])
             self.H_matrix = np.add(self.H_matrix, H_bc)
 
+
         if bc_nodes_array[0] and bc_nodes_array[1]:
             add(0)
         if bc_nodes_array[1] and bc_nodes_array[2]:
